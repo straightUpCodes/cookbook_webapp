@@ -1,4 +1,4 @@
-# Cookbook Webapp
+# Cookbook Web App
 
 A full-stack recipe management application that allows users to create, view, and update recipes in a simple, modern interface. Built with React (Vite + TypeScript) on the frontend and Node.js + MongoDB on the backend.
 
