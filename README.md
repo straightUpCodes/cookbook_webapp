@@ -21,39 +21,6 @@ Backend | Node.js, Express
 Database | MongoDB
 Tools | Git, npm, dotenv
 
-# Project Structure
-
-project-root/
-│
-
-├── backend/ # Server-side logic and database connection
-
-│ ├── server.js
-
-│ ├── .env.server # Used to run locally on house server
-
-│ └── .env.development
-
-│
-
-├── src/ # Frontend source files
-
-│ ├── components/ # Reusable React components
-
-│ ├── pages/ # Page-level views
-
-│ ├── App.tsx # Main app structure
-
-│ └── main.tsx # Entry point
-
-│
-
-├── package.json
-
-├── vite.config.ts
-
-└── README.md
-
 # Setup Steps
 
 1. npm install
