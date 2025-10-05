@@ -17,8 +17,11 @@ A full-stack recipe management application that allows users to create, view, an
 # Tech stack
 
 Frontend | React (Vite + TypeScript), CSS Modules
+
 Backend | Node.js, Express
+
 Database | MongoDB
+
 Tools | Git, npm, dotenv
 
 # Setup Steps
