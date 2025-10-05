@@ -5,9 +5,13 @@ A full-stack recipe management application that allows users to create, view, an
 # Features
 
 • Add, edit, and view recipes with details like ingredients, steps, and cook time.
+
 • Interactive and responsive UI built with modular React components.
+
 • MongoDB backend for persistent data storage.
+
 • RESTful API with organized route handling and environment configuration.
+
 • Real-time updates using React state management and controlled forms.
 
 # Tech stack
