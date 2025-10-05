@@ -33,7 +33,7 @@ app.get("/api/categories", async (_req, res) => {
     const collection = db.collection("categories");
 
     const documents = await collection.find().toArray();
-    res.json(documents); // Send JSON response
+    res.json(documents);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -50,7 +50,7 @@ app.get("/api/recipes/:category", async (req, res) => {
     const documents = await collection
       .find({ category: category_name })
       .toArray();
-    res.json(documents); // Send JSON response
+    res.json(documents);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -58,14 +58,14 @@ app.get("/api/recipes/:category", async (req, res) => {
 });
 
 app.get("/api/recipe/:name", async (req, res) => {
-  const recipe_name = decodeURIComponent(req.params.name); // Decode URL-encoded string
+  const recipe_name = decodeURIComponent(req.params.name);
 
   try {
     const db = await connectToDatabase();
     const collection = db.collection("recipes");
 
     const documents = await collection.find({ name: recipe_name }).toArray();
-    res.json(documents); // Send JSON response
+    res.json(documents);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -211,7 +211,7 @@ app.get("/api/allrecipes", async (req, res) => {
     const collection = db.collection("recipes");
 
     const documents = await collection.find({}).toArray();
-    res.json(documents); // Send JSON response
+    res.json(documents);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -249,10 +249,9 @@ app.get("/api/units", async (_req, res) => {
 
     const documents = await collection.find().toArray();
 
-    // Extract only the units
     const unitsArray = documents.flatMap((doc) => doc.units);
 
-    res.json(unitsArray); // Send only the units
+    res.json(unitsArray);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -260,7 +259,7 @@ app.get("/api/units", async (_req, res) => {
 });
 
 app.post("/api/unit/add", async (req, res) => {
-  const unit = req.body.unitName; // Expect a single string
+  const unit = req.body.unitName;
 
   if (!unit || typeof unit !== "string") {
     return res
@@ -272,10 +271,8 @@ app.post("/api/unit/add", async (req, res) => {
     const db = await connectToDatabase();
     const collection = db.collection("units");
 
-    // Update a specific document, assuming you have one master document for units
     const filter = { _id: new ObjectId("68b63461cf8f5a3d5313939c") };
-    const update = { $addToSet: { units: unit } }; // $addToSet prevents duplicates
-
+    const update = { $addToSet: { units: unit } };
     const result = await collection.updateOne(filter, update);
 
     if (result.matchedCount === 0) {
@@ -290,7 +287,7 @@ app.post("/api/unit/add", async (req, res) => {
 });
 
 app.post("/api/unit/delete", async (req, res) => {
-  const unit = req.body.unitName; // Expect a single string
+  const unit = req.body.unitName;
 
   if (!unit || typeof unit !== "string") {
     return res

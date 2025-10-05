@@ -538,7 +538,7 @@ function GetCategories({
 
   // Fetch data on component mount
   useEffect(() => {
-    fetch(`${apiUrl}/api/categories`, {}) // Call your API
+    fetch(`${apiUrl}/api/categories`, {})
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch categories");
